@@ -3,7 +3,7 @@
   <h1 class="title">{{ .Title }}</h1>
   Check out our blog posts:
   <ul>
-    {{ range where .Site.Pages "Type" "blog_posts" }}
+    {{ range where .Site.RegularPages "Type" "blog_posts" }}
       <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>
