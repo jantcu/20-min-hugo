@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-    <title>{{ .Site.Title }}</title>
-  </head>
-  <body class="has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top has-shadow">
-      <div class="container">
-        <a href="/" class="navbar-item">JAMbos</a>
-        <div class="navbar-menu navbar-end">
-          {{ range where .Pages "Type" "page" }}
-            <a href="{{ .Permalink }}" class="navbar-item">{{ .Title }}</a>
-          {{ end }}
-        </div>
-      </div>
-    </nav>
-    <div class="container">
-      <h1>{{ .Title }}</h1>
-      body
-    </div>
-  </body>
-</html>
+{{ define "content" }}
+<div class="container">
+  <h1>{{ .Title }}</h1>
+  body
+</div>
+{{ end }}
