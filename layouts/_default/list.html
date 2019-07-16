@@ -1,6 +1,11 @@
 {{ define "content" }}
 <div class="container">
-  <h1>{{ .Title }}</h1>
-  body
+  <h1 class="title">{{ .Title }}</h1>
+  Check out our blog posts:
+  <ul>
+    {{ range where .Site.Pages "Type" "blog_posts" }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
 </div>
 {{ end }}
