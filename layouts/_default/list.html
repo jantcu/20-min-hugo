@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <title>{{ .Site.Title }}</title>
   </head>
   <body>
+    <nav class="navbar is-fixed-top has-shadow">
+      <a href="/" class="navbar-item">JAMbos</a>
+      <div class="navbar-menu navbar-end">
+        {{ range where .Pages "Type" "page" }}
+          <a href="{{ .Permalink }}" class="navbar-item">{{ .Title }}</a>
+        {{ end }}
+      </div>
+    </nav>
     <h1>{{ .Title }}</h1>
-    <ul>
-    {{ range .Pages }}
-      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>  
-    {{ end }}
-    </ul>
     body
   </body>
 </html>
