@@ -6,7 +6,7 @@
       <div class="container">
         <a href="/" class="navbar-item">JAMbos</a>
         <div class="navbar-menu navbar-end">
-          {{ range where .Pages "Type" "page" }}
+          {{ range where .Site.Pages "Type" "page" }}
             <a href="{{ .Permalink }}" class="navbar-item">{{ .Title }}</a>
           {{ end }}
         </div>
