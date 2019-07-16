@@ -6,16 +6,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <title>{{ .Site.Title }}</title>
   </head>
-  <body>
+  <body class="has-navbar-fixed-top">
     <nav class="navbar is-fixed-top has-shadow">
-      <a href="/" class="navbar-item">JAMbos</a>
-      <div class="navbar-menu navbar-end">
-        {{ range where .Pages "Type" "page" }}
-          <a href="{{ .Permalink }}" class="navbar-item">{{ .Title }}</a>
-        {{ end }}
+      <div class="container">
+        <a href="/" class="navbar-item">JAMbos</a>
+        <div class="navbar-menu navbar-end">
+          {{ range where .Pages "Type" "page" }}
+            <a href="{{ .Permalink }}" class="navbar-item">{{ .Title }}</a>
+          {{ end }}
+        </div>
       </div>
     </nav>
-    <h1>{{ .Title }}</h1>
-    body
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+      body
+    </div>
   </body>
 </html>
