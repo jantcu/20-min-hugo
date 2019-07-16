@@ -8,7 +8,7 @@
   <body>
     <h1>{{ .Title }}</h1>
     <ul>
-    {{ range where .Pages "Type" "page" }}
+    {{ range .Pages }}
       <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>  
     {{ end }}
     </ul>
