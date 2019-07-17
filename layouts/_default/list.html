@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{{ .Site.Title }}</title>
-  </head>
-  <body>
+{{ define "content" }}
     <h1>{{ .Title }}</h1>
-    <ul>
-    {{ range where .Pages "Type" "page" }}
-      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>  
-    {{ end }}
-    </ul>
-    body
-  </body>
-</html>
+    Check out our blog:
+        {{ range where .Site.RegularPages "Type" "blog_posts" }}
+          <a href="{{ .Permalink }}" class="navbar-item">{{ .Title }}</a>
+        {{ end }}
+{{ end }}
