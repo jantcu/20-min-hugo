@@ -9,7 +9,7 @@
     {{ $component := resources.Get (printf "css/components/%s" .Name) }}
     {{ $style = slice $component $style | resources.Concat .Name }}
   {{ end }}
-  {{ $style = $style | minify | fingerprint }}
+  {{ $style = slice $style | resources.Concat "all.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
 
   <title>{{ .Site.Title }}</title>
