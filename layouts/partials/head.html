@@ -11,6 +11,8 @@
   {{ end }}
   {{ $style = slice $style | resources.Concat "all.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
+  {{ $other := resources.Get "css/other.scss" | toCSS }}
+  <link rel="stylesheet" href="{{ $other.Permalink }}">
 
   <title>{{ .Site.Title }}</title>
 </head>
