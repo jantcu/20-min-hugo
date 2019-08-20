@@ -1,0 +1,15 @@
+:root {
+  --color-primary: #66FCF1;
+  --color-primary-dark: #45A29E;
+  --color-secondary: #fCAE66;
+  --color-accent: #FC666B;
+  --color-base-light: #C5C6C7;
+  --color-base-lightest: #FFF;
+  --color-base-dark: #1F2833;
+  --color-base-darker: #0B0C10;
+  --color-base-darkest: #000; }
+
+body {
+  background-color: var(--color-primary);
+  max-width: calc(100% - 4rem);
+  margin: 0 auto; }
