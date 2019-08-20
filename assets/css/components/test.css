@@ -1,3 +1,3 @@
 body {
-  color: yellow;
+  color: var(--color-accent);
 }
