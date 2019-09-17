@@ -1,0 +1,1 @@
+a{color:red!important}h1{color:var(--color-lightest)}h1{font-size:4rem}:root{--color-primary: #7fe3db;--color-secondary: #a5ccdf;--color-tertiary: #fac87f;--color-lightest: #fff;--color-darkest: #000}body{background-color:var(--color-primary)}
