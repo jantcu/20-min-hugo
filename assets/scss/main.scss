@@ -8,4 +8,6 @@ body {
   background-color: $color-primary;
 }
 
-@import "components/test"
+@import "components/another";
+@import "components/test";
+@import "components/zzz";
