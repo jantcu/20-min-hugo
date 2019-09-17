@@ -5,7 +5,7 @@
   {{ $style := resources.Get "scss/main.scss" }}
   {{ $components := resources.Match "scss/components/*.scss" }}
   {{ range $components }}
-    {{ $style = slice . $style | resources.Concat .Name }}
+    {{ $style = slice $style . | resources.Concat .Name }}
   {{ end }}
   {{ $style = slice $style | resources.Concat "all.css" | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
