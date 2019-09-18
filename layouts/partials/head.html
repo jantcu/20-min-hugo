@@ -2,13 +2,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-  {{ $style := resources.Get "css/main.css" }}
-  {{ $components := readDir "assets/css/components" }}
+  {{ $style := resources.Get "scss/main.scss" }}
+  {{ $components := resources.Match "scss/components" }}
   {{ range $components }}
-    {{ $component := resources.Get (printf "css/components/%s" .Name) }}
-    {{ $style = slice $component $style | resources.Concat .Name }}     
+    {{ $style = slice $style . | resources.Concat .Name }}     
   {{ end }}
-  {{ $style = $style | minify | fingerprint }}
+  {{ $style = slice $style | resources.Concat "all.css" | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
   <title>{{ .Site.Title }}</title>
 </head>
