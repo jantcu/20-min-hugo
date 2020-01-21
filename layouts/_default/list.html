@@ -1,5 +1,8 @@
 {{ define "content" }}
     <h1>{{ .Title }}</h1>
+    {{ range .Params.Components }}
+      {{ . }}
+    {{ end }}
     Check out our blog:
         {{ range where .Site.RegularPages "Type" "blog_posts" }}
           <a href="{{ .Permalink }}" class="navbar-item">{{ .Title }}</a>
