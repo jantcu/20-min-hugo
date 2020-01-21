@@ -1,0 +1,4 @@
+Check out our blog:
+{{ range where site.RegularPages "Type" "blog_posts" }}
+  <a href="{{ .Permalink }}" class="navbar-item">{{ .Title }}</a>
+{{ end }}

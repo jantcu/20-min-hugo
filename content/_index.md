@@ -15,4 +15,5 @@ components:
         desc: Third!
   - blurb: I'm a blurb
   - slider: I'm a slider
+  - blog:
 ---
