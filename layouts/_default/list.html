@@ -1,7 +1,15 @@
 {{ define "content" }}
     <h1>{{ .Title }}</h1>
     {{ range .Params.Components }}
-      {{ . }}
+      {{ if .hero }}
+        {{ partial "hero.html" }}
+      {{ end }}
+      {{ if .grid }}
+        {{ partial "grid.html" }}
+      {{ end }}
+      {{ if .blurb }}
+        {{ partial "blurb.html" }}
+      {{ end }}
     {{ end }}
     Check out our blog:
         {{ range where .Site.RegularPages "Type" "blog_posts" }}
