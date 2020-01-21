@@ -11,6 +11,8 @@ components:
         desc: Cool item
       - title: Item 2
         desc: cooler item
+      - title: Item 3
+        desc: Third!
   - blurb: I'm a blurb
   - slider: I'm a slider
 ---
