@@ -2,13 +2,13 @@
     <h1>{{ .Title }}</h1>
     {{ range .Params.Components }}
       {{ if .hero }}
-        {{ partial "hero.html" }}
+        {{ partial "hero.html" (dict "context" . "hero" .hero) }}
       {{ end }}
       {{ if .grid }}
-        {{ partial "grid.html" }}
+        {{ partial "grid.html" (dict "context" . "grid" .grid ) }}
       {{ end }}
       {{ if .blurb }}
-        {{ partial "blurb.html" }}
+        {{ partial "blurb.html" (dict "context" . "blurb" .blurb ) }}
       {{ end }}
     {{ end }}
     Check out our blog:

@@ -1,7 +1,7 @@
 ---
 title: Homepageeee
 components:
-  - hero: test
-  - grid: test
-  - blurb: test
+  - hero: I'm a hero
+  - grid: I'm a grid
+  - blurb: I'm a blurb
 ---
