@@ -1,0 +1,10 @@
+<h3>{{ .grid.title }}</h3>
+
+<div style="display: flex;">
+{{ range .grid.items }}
+<div style="flex: 1">
+  {{ .title }}
+  {{ .desc }}
+</div>
+{{ end }}
+</div>

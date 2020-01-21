@@ -1,7 +1,8 @@
 {{ define "content" }}
     <h1>{{ .Title }}</h1>
-    Check out our blog:
-        {{ range where .Site.RegularPages "Type" "blog_posts" }}
-          <a href="{{ .Permalink }}" class="navbar-item">{{ .Title }}</a>
-        {{ end }}
+    {{ range .Params.Components }}
+      {{ range $component, $data := . }}
+        {{ partial (printf "%s.html" $component) (dict $component $data) }}
+      {{ end }}
+    {{ end }}
 {{ end }}
