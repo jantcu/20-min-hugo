@@ -1,6 +1,9 @@
 {{ define "content" }}
     <h1>{{ .Title }}</h1>
     {{ range .Params.Components }}
+      {{ range $component, $data := . }}
+        {{ partial (printf "%s.html" $component) (dict $component .) }}
+      {{ end }}
       {{ if .hero }}
         {{ partial "hero.html" (dict "hero" .hero) }}
       {{ end }}
