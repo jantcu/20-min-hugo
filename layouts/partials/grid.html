@@ -1,1 +1,6 @@
-<h1 style="background-color: blue;">{{ .grid }}</h1>
+<h1 style="background-color: blue;">{{ .grid.title }}</h1>
+
+{{ range .grid.items }}
+  {{ .title }}
+  {{ .desc }}
+{{ end }}
